@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 app.import('bower_components/threejs/build/three.min.js');
 app.import('vendor/three-trackball-controls/trackball-controls.js');
+app.import('vendor/tween/tween.js');
 
 module.exports = app.toTree();

@@ -1,0 +1,529 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"table",
+				"table-layout"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"his",
+				"historylineDefs"
+			],
+			[
+				"history",
+				"historylineDefs"
+			],
+			[
+				"accum",
+				"accumSeq2"
+			],
+			[
+				"entity",
+				"entityParamValue"
+			],
+			[
+				"entityrP",
+				"entityParamName"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"real",
+				"realtimeYMax"
+			],
+			[
+				"hist",
+				"historyYMax"
+			],
+			[
+				"border",
+				"border-left"
+			],
+			[
+				"time",
+				"timeout	setTimeout function"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "nfnapp/app/components/webgl-globe.js",
+			"settings":
+			{
+				"buffer_size": 7771,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"CodeFormatter: Format as CSS Syntax"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jbutsch/Projects/github/nfn3d",
+		"/Users/jbutsch/Projects/github/nfn3d/nfnapp",
+		"/Users/jbutsch/Projects/github/nfn3d/nfnapp/app",
+		"/Users/jbutsch/Projects/github/nfn3d/nfnapp/app/components",
+		"/Users/jbutsch/Projects/github/nfn3d/nfnapp/app/utils",
+		"/Users/jbutsch/Projects/github/nfnow/nfnow-app",
+		"/Users/jbutsch/Projects/github/nfnow/nfnow-app/app",
+		"/Users/jbutsch/Projects/github/nfnow/nfnow-app/app/controllers"
+	],
+	"file_history":
+	[
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/threadpools/threadpool.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/app.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/routes/routes/route.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/services/service.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/services/service.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/service-rps.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/service-latency.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/service-fallback.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/service-semaphore-permits.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-fallback.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-utilization-pct.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-average-host-rps.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-semaphore-permits.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-latency.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-rps.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-active-pct.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-active.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-completed-tasks.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-executed-rolling.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-max-active-rolling.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-rps.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-utilization-rolling.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/threadpools/main.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/threadpools/threadpool.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-active-pct.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-active.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-average-host-rps.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-completed-tasks.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-executed-rolling.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-max-active-rolling.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-rps.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-utilization-pct.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-utilization-rolling.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-multiline-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-multiline-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-multiline-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/utils/graph-data-helpers.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/threadpool-rps.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-thread-pool-rps-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/cluster-instances-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/stream-spinner.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/hover-box.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/routes-summary-table.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/services-summary-table.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/services-item.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/services-summary-table.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/services-summary-table.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/thread-pool-table.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/nf-scroll-area-slider.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/routes-summary-table.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/infra-summary-table.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/drop-down.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/cluster-item.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/asg-item.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/infra-summary-table.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/infra-page.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/routes-item.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/routes/routes/main.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/routes-summary-table.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/routes/main.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/routes/main.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/thread-pool-item.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/cluster-row.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/cluster-asg-row.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/services/main.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/thread-pool-table.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/services/main.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/route-summary.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/threadpools/main.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/devices/device.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-multiline-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/thread-pool-table.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/vis.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/entity-summary.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/components/time-selector.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/common.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/nf-scroll-area-slider.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/graph-common.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/multiline-graph-colors.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles/latency-line.scss",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/devices/device.hbs",
+		"/Users/jbutsch/Library/Application Support/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/Users/jbutsch/Library/Application Support/Sublime Text 3/Packages/User/CodeFormatter.sublime-settings",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-semaphore-permits-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-semaphore-permits-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-semaphore-permits-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-semaphore-permits-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-fallback-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-fallback-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-fallback-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-fallback-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-latency-service-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-latency-service-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-latency-service-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-latency-service-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-rps-service-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-rps-service-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-rps-service-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-rps-service-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/helpers/format-moment.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/time-series-graph-common.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-network-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-rps-http-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-one-line-realtime.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-one-line-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-latency-infra-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-latency-devices-controller.js",
+		"/Users/jbutsch/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/jbutsch/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-rps-service-controller.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-one-line-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-one-line-realtime.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-one-line-controller.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-singleline-history.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/components/graph-singleline-realtime-device.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-singleline-history.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-top-line.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/service-properties.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/hystrix-properties.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-fallback-controller.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-semaphore-permits-controller.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/utils/vis.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/mixins/graph-latency-service-controller.js",
+		"/Users/jbutsch/Projects/stash/argus_netflix_backend/websockettest_examples/test_infra_mantis.html",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/controllers/infrastructure/main.js",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/templates/infrastructure/main.hbs",
+		"/Users/jbutsch/Projects/stash/cli/argus-ui/app/components/graph-latency-devices-history.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/jbutsch/Projects/stash/cli/argus-ui",
+			"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles",
+			"/Users/jbutsch/Projects/stash/cli/argus-ui/app",
+			"/Users/jbutsch/Projects/stash/cli/argus-ui",
+			"/Users/jbutsch/Projects/stash/cli/argus-ui/app",
+			"/Users/jbutsch/Projects/stash/cli/argus-ui/app/styles"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"</td>",
+			"<td class=\"",
+			"d3.js",
+			"selector",
+			"15px",
+			"item.",
+			"latency",
+			"route_name",
+			"2xx",
+			"services-summary-table",
+			"infra-summary-table",
+			"21px",
+			" xprop: '[0]',",
+			"[ {",
+			"{  yprop",
+			"xprop: '[0]',",
+			"  ",
+			"},",
+			"\n",
+			"{{/nf-cell}}",
+			"{{#nf-cell}}",
+			"{{/nf-header}}",
+			"{{#nf-header}}",
+			"nf-column",
+			"absolute",
+			"time-selector",
+			".time-selector",
+			"radio-box-label",
+			"body",
+			"entity-summary",
+			"tablecolumns",
+			"brewer-blue",
+			"pct",
+			"pool",
+			"yprop",
+			"g.",
+			"  ",
+			"\n",
+			"utilization",
+			"clusterRpsShared",
+			"activeShared",
+			"windows",
+			"window",
+			"rolling",
+			"sparkRollingWindowThreadPoolUtilization",
+			"currentActiveCount",
+			"CurrentActiveCount",
+			"rollingWindowThreadPoolUtilization",
+			"cluster-row",
+			"{{/nf-header}}",
+			"{{#nf-header class=\"clickable\"}}",
+			"nf-column",
+			"device",
+			"DEVICE_LATENCY_REALTIME",
+			"no facets selected",
+			"apm-choose-device-operational-name",
+			"right",
+			"'data",
+			"content",
+			"group",
+			"{{/nf-header}}",
+			"{{#nf-header class=\"clickable\"}}",
+			"nf-column",
+			"{{/nf-cell}}",
+			"{{#nf-cell}}",
+			"name",
+			"bindto",
+			"clusterLine"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"</div>",
+			"<div class=\"table-cell ",
+			"",
+			"clusterLine.",
+			"5xx",
+			"4xx",
+			"3xx",
+			"",
+			"[{",
+			" { yprop",
+			"",
+			" ",
+			"},\n",
+			" ",
+			"</td>",
+			"<td>",
+			"",
+			"nf-column-manager",
+			"brewer-sunset",
+			"p",
+			"queue",
+			".",
+			"",
+			" ",
+			"",
+			"rollingUtilization",
+			"completedTasksShared",
+			"rollingMaxAciveShared",
+			"averageHostRpsShared",
+			"clusterRpsShared",
+			"",
+			"sparkCurrentActiveCount",
+			"threadPoolUtilization",
+			"currentActiveCount",
+			"currentActiveCount90",
+			"",
+			"nf-column-manager",
+			"",
+			"nf-column-manager",
+			"\n</td>",
+			"<td>\n",
+			"item"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/jbutsch/Projects/github/nfn3d"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/jbutsch/Projects/github/nfnow/nfnow-app"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "nfnapp/app/components/webgl-globe.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								204,
+								204
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 342.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
