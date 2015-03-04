@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+
+  function log(s) {
+      console.log(s);
+      document.write(s);
+      document.write("</br>");
+  }
+
+  var host = "ws://localhost:8001";
+
+  function doit() {
+    try {
+      socket = new WebSocket(host);
+
+      log("called websocket");
+
+      socket.onopen = function (openEvent) {
+         log("opened");
+      };
+
+      socket.onmessage = function(msg) {
+         log("got message " + msg.data);
+      };
+
+      socket.onclose = function() {
+          log("closed");
+      };
+
+      socket.onerror = function(error) {
+         log("error " + JSON.stringify(error));
+      };
+
+    } catch (exception) {
+       log("exception = " + exception);
+    }
+  }
+
+  doit();
+
+</script>
+</body>
+</head>
+</html>

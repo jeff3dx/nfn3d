@@ -7,6 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('globe');
+  this.route('globe', {path: '/'});
+  this.route('globe', {path: '/globe'});
 });
 
 export default Router;

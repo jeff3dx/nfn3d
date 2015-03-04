@@ -1,11 +1,22 @@
 /* globals require, process */
 
-var url =  require("url");
-var Rx =   require("rx");
+// npm install
+var argv = require("minimist")(process.argv.slice(2)); // https://www.npmjs.com/package/minimist
+var ws   = require("nodejs-websocket");                // https://www.npmjs.com/package/nodejs-websocket
+var Rx   = require("rx");
+
+// node built in
+var url  = require("url");
 var http = require("http");
 var path = require("path");
-var fs =   require("fs");
-var port = process.argv[2] || 7001;
+var fs   = require("fs");
+var request = require("request");
+
+
+var httpPort = argv.httpport || 7001;
+var webSocketPort = argv.websocketport || 8001;
+var pollInterval = argv.pollinterval || 5000;
+var environment = argv.environment || "prod";
 
 var MIME_TYPES = {
   "html": "text/html",
@@ -13,20 +24,21 @@ var MIME_TYPES = {
   "jpg": "image/jpeg",
   "png": "image/png",
   "js": "text/javascript",
-  "css": "text/css"
+  "css": "text/css",
+  "webp": "image/webp"
 };
 
 var TEN_SECONDS = 10000;
-var URL_EAST = 'http://citools.us-east-1.prod.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
-var URL_WEST = 'http://citools.us-west-2.prod.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
-var URL_EU = 'http://citools.eu-west-1.prod.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
+var URL_EAST = 'http://citools.us-east-1.{env}.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
+var URL_WEST = 'http://citools.us-west-2.{env}.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
+var URL_EU = 'http://citools.eu-west-1.{env}.netflix.com/clientinfo/api/esi/logblobs?user=jbutsch%40netflix.com&logblobTypes=startplay&lastN=100&startSearchTimestampMsec={time}&isGeoMap=true';
 var URL_BOXART = 'http://api-int-be-1283610733.us-east-1.elb.amazonaws.com:7001/jbutsch/getArtWork?videoIds={mids}&widths=200&types=sdp,personalize=true';
+var NOTFOUND = -1;
 
-
-// Graceful shutdown
+// Node graceful shutdown
 process.on( 'SIGINT', function() {
-  console.log( "\nGracefully shutting down from (Ctrl-C)" );
-  process.exit( );
+  console.log("\nShutting down from (Ctrl-C)");
+  process.exit();
 });
 
 
@@ -38,47 +50,120 @@ function getHeaders() {
   return headers;
 }
 
+console.log("Hosting HTTP on port " + httpPort);
+console.log("Hosting WebSocket on port " + webSocketPort);
 
-console.log("Serving on port " + port);
 
-
+// HTTP SERVER
 http.createServer(function(req, resp) {
   try {
+
+    // OPTION CORS requests
     if (req.method === 'OPTIONS') {
-      // CORS
+      console.log("Options request");
       optionsCorsHandler(resp);
-
+    // other requests
     } else {
-      // requests
-      startPollingForData();
-
-      var headers = getHeaders();
-      resp.writeHead(200, headers);
-      resp.end();
+      if(req.url.indexOf("proxy") !== NOTFOUND) {
+        proxyHandler(req, resp);
+      } else {
+        staticFileHandler(req, resp);
+      }
     }
+
   } catch (ex) {
     console.log("Request exception: " + ex);
   }
 
-})
+}).on('error', function(e) {
+  console.log("http.get() error: ", e);
 
-.on('error', function(e) {
-  console.log("server general error: ", e);
-})
+}).listen(parseInt(httpPort, 10));
 
-.listen(parseInt(port, 10));
 
+
+// WEBSOCKET SERVER
+ws.createServer(function (websocket) {
+  console.log("New connection");
+
+  scheduleNextPoll(websocket, true);
+
+  // websocket.on("text", function (str) {});
+  // websocket.on("close", function (code, reason) {});
+}).listen(webSocketPort);
+
+
+// mainly for proxying image files. Client WebGL cannot
+// access anything cross domain including images
+function proxyHandler(req, resp) {
+  // restore original resource URL
+  var remoteUrl = req.url.replace("/proxyhttp/", "http://");
+
+  request({
+    url: remoteUrl
+  })
+  .on('error', function(e) {
+    resp.end(e);
+  })
+  .pipe(resp);
+}
+
+
+function staticFileHandler(req, resp) {
+  var parsedUrl = url.parse(req.url, true);
+
+  console.log("pathname: " + parsedUrl.pathname);
+
+  var pathname = parsedUrl.pathname;
+  if(pathname.length === 0 || pathname === "/" ) {
+    console.log("default index.html");
+    pathname = 'index.html';
+  }
+
+  var filename = path.join(process.cwd(), pathname);
+
+  console.log("file: " + filename);
+
+  fs.exists(filename, function(exists) {
+    if(!exists) {
+      console.log("File not found: " + filename);
+      resp.writeHead(404, {'Content-Type': 'text/plain'});
+      resp.write('404 Not Found\n');
+      resp.end();
+
+    } else {
+      var mimeType = MIME_TYPES[path.extname(filename).split(".")[1]];
+      resp.writeHead(200, mimeType);
+
+      var fileStream = fs.createReadStream(filename);
+      fileStream.pipe(resp);
+    }
+  });
+}
 
 
 function optionsCorsHandler(resp) {
-  console.log("Options request");
   var headers = getHeaders();
   resp.writeHead(200, headers);
   resp.end();
 }
 
 
-function startPollingForData() {
+function scheduleNextPoll(websocket, immediate) {
+  if(websocket.readyState !== websocket.OPEN) {
+    console.log("WebSocket not open. Skipping.");
+    return;
+  }
+
+  var interval = immediate? 0 : pollInterval;
+
+  setTimeout(function(websocket) {
+    sendNewMessage(websocket);
+  }, interval, websocket);
+}
+
+
+function sendNewMessage(websocket) {
   var regionSamplesSeq = getRegionSamplesSeq();
 
   regionSamplesSeq
@@ -105,20 +190,22 @@ function startPollingForData() {
         function(boxArtSet) {
           var lookup = {};
 
-          // hash box art id's
+          // hash boxart id's
           boxArtSet.videos.forEach(function(boxart) {
             lookup[boxart.id] = boxart && boxart.artworks && boxart.artworks.length > 0?
               boxart.artworks[0].url :
               false;
           });
 
-          // associate box art with startplay events
+          // associate boxart with startplay events
           allEvents.forEach(function(d) {
             d.artUrl = lookup[d.mid] || '';
           });
 
           var msg = JSON.stringify(allEvents, null, 2);
-          pushDataToWebSocket(msg);
+          websocket.sendText(msg);
+
+          scheduleNextPoll(websocket);
         }
       );
     },
@@ -133,9 +220,9 @@ function getRegionSamplesSeq() {
 
   // get samples from three regions and combine them
   url = [
-    URL_EAST.replace("{time}", time),
-    URL_WEST.replace("{time}", time),
-    URL_EU.replace("{time}", time)
+    URL_EAST.replace("{time}", time).replace("{env}", environment),
+    URL_WEST.replace("{time}", time).replace("{env}", environment),
+    URL_EU.replace("{time}", time).replace("{env}", environment),
   ];
 
   var usEastSeq = getDataForUrlSeq(url[0]);
@@ -151,6 +238,7 @@ function getRegionSamplesSeq() {
         parsed = JSON.parse(d);
       } catch(ex) {
         console.log("could not parse region sample: " + ex);
+        return [];
       }
 
       console.log("sample count: " + parsed.events.length);
@@ -167,7 +255,7 @@ function getDataForUrlSeq(url) {
         obs.onCompleted();
       },
         function() {
-        // on errors complete so that associated requests can continue
+        // on errors, complete so that associated requests can continue
         obs.onCompleted();
       });
 
@@ -179,8 +267,7 @@ function getDataForUrlSeq(url) {
 
 
 function getBoxArtSeq(mids) {
-  // todo check for cached
-
+  // todo cache?
   var url = URL_BOXART.replace("{mids}", mids);
   var seq = getDataForUrlSeq(url);
 
@@ -193,19 +280,11 @@ function getBoxArtSeq(mids) {
       parsed = JSON.parse(fixed);
     } catch(ex) {
       console.log("could not parse box art: " + ex);
+      return [];
     }
 
     return parsed;
   });
-}
-
-
-function pushDataToWebSocket(data) {
-
-  console.log("Final data: " + trunc(data));
-  // TODO
-  // maybe write data to file
-
 }
 
 
